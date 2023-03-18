@@ -4,6 +4,19 @@
  * This is a general purpose Gradle build.
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/8.0.1/samples
  */
+println 'Start...'
 task firstTask {
     println 'Gradle Rocks!!'
+    doFirst() {
+        println 'doFirst!!'
+    }
+    doLast() {
+        println 'doLast!'
+    }
 }
+
+task show << {
+   buildscript.configurations.classpath.each { println it }
+}
+
+println 'End...'
