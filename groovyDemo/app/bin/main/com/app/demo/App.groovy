@@ -9,5 +9,8 @@ class App {
         def dt = new DataTypes()
         dt.intType()
         dt.floatType()
+        println("\n=============================================\n")
+
+        def cd = new ClosuresDemo()
     }
 }
