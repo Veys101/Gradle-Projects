@@ -12,5 +12,8 @@ class App {
         println("\n=============================================\n")
 
         def cd = new ClosuresDemo()
+
+        println("\n=============================================\n")
+        def collectionDemo = new CollectionsDemo()
     }
 }
