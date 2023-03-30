@@ -15,5 +15,9 @@ class App {
 
         println("\n=============================================\n")
         def collectionDemo = new CollectionsDemo()
+
+        def method = new Method()
+        println method.product2(2,3)
+        println method.product1(3,6)
     }
 }
