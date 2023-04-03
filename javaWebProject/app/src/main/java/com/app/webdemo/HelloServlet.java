@@ -11,12 +11,14 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html");
         request.getRequestDispatcher("./hello.html").forward(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     throws IOException, ServletException {
         String uName = request.getParameter("hello");
