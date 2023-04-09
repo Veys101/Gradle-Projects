@@ -6,6 +6,8 @@
  * User Manual available at https://docs.gradle.org/8.0.1/userguide/building_java_projects.html
  */
 
+import com.app.webdemo.MyAWSPlugin
+
 plugins {
    id 'war'
    id 'org.gretty' version '4.0.3'
@@ -24,5 +26,10 @@ dependencies {
    implementation group: 'org.mockito', name: 'mockito-core', version: '3.5.9'
 }
 
-// If test task failed, jacocoTestReport executes
+apply plugin: MyAWSPlugin
+
+// Even if test task failed, jacocoTestReport executes
 test.finalizedBy jacocoTestReport
+
+// When deployToEc2 executes, firstly copyToS3 executes then it executes.
+deployToEC2.dependsOn copyToS3
